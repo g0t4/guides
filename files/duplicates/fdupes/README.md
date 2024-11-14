@@ -74,6 +74,33 @@ fdupes --order name|time|ctime ... # IMO superior to just use screen prompts and
 
 ```bash
 
+# type commands, i.e. 
+help <ENTER>
+<q> # exits help
+
+# instead of one by one marking files, use search to select a subset and then tag them all at once, i.e.:
+sel backups2 # selects all files in backups2 dir
+selr \.mkv$ # regex selection, in this cse for files ending in .mkv
+dsel/dselr # deselect matching files
+csel # clear selections, otherwise new selections add or modify existing
+# * read FILE SELECTION COMMANDS and TAGGING SELECTED FILES for many more commands
+# *** this is why I am a huge advocate of this tool, programatically review and remove duplicates instead of one by one clicking through them, whatever the scenario you will know how to approach deletions
+
+# once selected, mark files:
+ks # mark keep
+sel backups1 #
+ds # mark delete
+rs # remove tags from selected files
+
+# page up/down to confirm
+# when ready to apply changes:
+<DELETE> # press delete key to nuke them
+prune # also nukes
+
+
+
+# if backspace isn't working, just hit ENTER with invalid command and then try again
+
 # to quit:
 exit
 yes
