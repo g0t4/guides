@@ -98,7 +98,7 @@ rs # remove tags from selected files
 prune # also nukes
 
 # *** strategy: remove dups that are known in the copy you want to keep (desired golden copy)
-fdupes --delete backup1 backup2 backup3
+fdupes --delete backup1 backup2 backup3 --order name # I prefer to apply an order if viable, b/c then I can consistenly scan across dup groups to confirm what I am doing and the selected items are in same positions (when applicable)
 # I want to get rid of any file in backup2/3 that is in backup1, but not touch other files in backup2/3 (not in backup1)
 sel backup1 # select all files in backup1
 isel # invert that selection (will select only files in backup1 that are also in backup2/3), does not select files only in backup2/3 b/c it had to first be in backup1
