@@ -84,7 +84,6 @@ selr \.mkv$ # regex selection, in this cse for files ending in .mkv
 dsel/dselr # deselect matching files
 csel # clear selections, otherwise new selections add or modify existing
 # * read FILE SELECTION COMMANDS and TAGGING SELECTED FILES for many more commands
-# *** this is why I am a huge advocate of this tool, programatically review and remove duplicates instead of one by one clicking through them, whatever the scenario you will know how to approach deletions
 
 # once selected, mark files:
 ks # mark keep
@@ -97,7 +96,10 @@ rs # remove tags from selected files
 <DELETE> # press delete key to nuke them
 prune # also nukes
 
-
+# NOTES:
+# - pefectly fine to delete subsets and then re-review and target next subset! 
+# - duplicate groups drop off as they are removed (once only one file is left), think checklist
+# - programatically mark files is fantastic, superior to one by one marking
 
 # if backspace isn't working, just hit ENTER with invalid command and then try again
 
