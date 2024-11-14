@@ -76,7 +76,8 @@ fdupes --order name|time|ctime ... # IMO superior to just use screen prompts and
 
 # type commands, i.e. 
 help <ENTER>
-<q> # exits help
+quit # to exit (also `q` alone is enough)
+yes # to exit (also `y` alone is enough)
 
 # instead of one by one marking files, use search to select a subset and then tag them all at once, i.e.:
 sel backups2 # selects all files in backups2 dir
