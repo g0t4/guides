@@ -97,7 +97,18 @@ rs # remove tags from selected files
 <DELETE> # press delete key to nuke them
 prune # also nukes
 
-# NOTES:
+# *** strategy: remove dups that are known in the copy you want to keep (desired golden copy)
+fdupes --delete backup1 backup2 backup3
+# I want to get rid of any file in backup2/3 that is in backup1, but not touch other files in backup2/3 (not in backup1)
+sel backup1 # select all files in backup1
+isel # invert that selection (will select only files in backup1 that are also in backup2/3), does not select files only in backup2/3 b/c it had to first be in backup1
+# it's not a global invert, it's per duplicate group
+ds # mark for delete (in backup2/3)
+prune # done! all files in backup1 are not in backup2/3
+# at this point you might be able to manually review the rest if its small enough and you aren't comfortable with fdupes for some reason! that is the benefit of this strategy, if you pick a dir that has most of the files then this alone takes care of most issues
+# eventually, I would reocmmend merging the final files into one directory after all dups are removed, unless they are supposed to be separate dirs and just happened to have some dups
+
+#NOTES:
 # - pefectly fine to delete subsets and then re-review and target next subset! 
 # - duplicate groups drop off as they are removed (once only one file is left), think checklist
 # - programatically mark files is fantastic, superior to one by one marking
